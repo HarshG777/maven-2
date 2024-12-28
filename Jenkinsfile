@@ -10,12 +10,14 @@ pipeline{
     stage('checkout'){
       steps{
         checkout scm
+        echo "In checkout"
       }
     }
 
     stage('build'){
       step{
         bat 'mnv clean package'
+        echo "In build iN"
       }
     }
 
@@ -30,6 +32,8 @@ pipeline{
           -Dsonar.host.url=http://localhost:9000 \
           -Dsonar.token=%SONAR_TOKEN%
           '''
+
+          echo "In last stage"
         }
       }
     }
