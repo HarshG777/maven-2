@@ -25,7 +25,7 @@ pipeline{
           bat '''
           mvn clean verify sonar:sonar \
           -Dsonar.projectKey=Maven-2 \
-          -Dsonar.projectName='Maven-2' \
+          -Dsonar.projectName=Maven-2 \
           -Dsonar.sources=src/test/resources \
           -Dsonar.host.url=http://localhost:9000 \
           -Dsonar.token=%SONAR_TOKEN%
